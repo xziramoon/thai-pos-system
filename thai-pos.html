@@ -235,14 +235,14 @@
                 <!-- โหมด 1: ราคาสินค้า (เดิม) -->
                 <div class="mode60-field show" data-field="price">
                     <div class="calc-input-label"><span>ราคาสินค้าทั้งหมด</span><span class="sub">กรอกตัวเลข</span></div>
-                    <div class="calc-input-wrap"><input type="number" id="c60Price" inputmode="decimal" placeholder="0" min="0"><span class="calc-input-unit">฿</span></div>
+                    <div class="calc-input-wrap"><input type="number" id="c60Price" inputmode="decimal" placeholder="0" min="0" oninput="recalc60()"><span class="calc-input-unit">฿</span></div>
                 </div>
 
                 <!-- ✨ BAKA YUKE v2: โหมด 2: มีเงินเท่านี้ ซื้อได้สูงสุดเท่าไร -->
                 <!-- เปลี่ยนให้กรอก: เงินตัวเองในกระเป๋าตัง + ยอดเงินที่เหลือของผู้ใช้ (พช) -->
                 <div class="mode60-field" data-field="money">
                     <div class="calc-input-label"><span>💰 เงินตัวเองในกระเป๋าตัง ( พช )</span><span class="sub">ยอดเงินที่เหลือของผู้ใช้</span></div>
-                    <div class="calc-input-wrap"><input type="number" id="c60Wallet" inputmode="decimal" placeholder="0" min="0"><span class="calc-input-unit">฿</span></div>
+                    <div class="calc-input-wrap"><input type="number" id="c60Wallet" inputmode="decimal" placeholder="0" min="0" oninput="recalc60()"><span class="calc-input-unit">฿</span></div>
                     <div class="chips-row"><span style="font-size:11px; color:#aaa; align-self:center;">เลือกเร็ว:</span><span class="chip60" onclick="setWallet60(50)">50฿</span><span class="chip60" onclick="setWallet60(80)">80฿</span><span class="chip60" onclick="setWallet60(100)">100฿</span><span class="chip60" onclick="setWallet60(133)">133฿</span><span class="chip60" onclick="setWallet60(200)">200฿</span></div>
                     <!-- BAKA YUKE v2: แสดงยอดที่ต้องเติม พช ให้ชัดๆ -->
                     <div class="big-answer topup" id="c60TopupInline" style="margin-top:12px; background: linear-gradient(135deg, #7c2d12, #9a3412);">
@@ -255,14 +255,14 @@
                 <!-- ✨ โหมด 3: อยากได้ของราคานี้ ต้องเติมเท่าไร -->
                 <div class="mode60-field" data-field="topup">
                     <div class="calc-input-label"><span>ราคาสินค้าที่อยากได้</span><span class="sub">กรอกราคาเต็ม</span></div>
-                    <div class="calc-input-wrap"><input type="number" id="c60WantPrice" inputmode="decimal" placeholder="0" min="0"><span class="calc-input-unit">฿</span></div>
+                    <div class="calc-input-wrap"><input type="number" id="c60WantPrice" inputmode="decimal" placeholder="0" min="0" oninput="recalc60()"><span class="calc-input-unit">฿</span></div>
                     <div class="calc-input-label"><span>เงินตัวเองในเป๋าตังตอนนี้</span><span class="sub">ยอดที่มีอยู่</span></div>
-                    <div class="calc-input-wrap"><input type="number" id="c60HavePrice" inputmode="decimal" placeholder="0" min="0"><span class="calc-input-unit">฿</span></div>
+                    <div class="calc-input-wrap"><input type="number" id="c60HavePrice" inputmode="decimal" placeholder="0" min="0" oninput="recalc60()"><span class="calc-input-unit">฿</span></div>
                 </div>
 
                 <!-- BAKA YUKE v2: เปลี่ยน label เป็น 'ยอดเงินที่เหลือของผู้ใช้' + ช่องกรอก -->
                 <div class="calc-input-label"><span>💳 ยอดเงินที่เหลือของผู้ใช้ ( พช )</span><span class="sub">ดูจากแอปเป๋าตัง → ยอดคงเหลือ</span></div>
-                <div class="calc-input-wrap"><input type="number" id="c60Remaining" inputmode="decimal" placeholder="0" min="0" max="200"><span class="calc-input-unit">฿</span></div>
+                <div class="calc-input-wrap"><input type="number" id="c60Remaining" inputmode="decimal" placeholder="0" min="0" max="200" oninput="recalc60()"><span class="calc-input-unit">฿</span></div>
                 <!-- ซ่อนช่อง c60Used ไว้ แต่คำนวณจาก c60Remaining อัตโนมัติ -->
                 <input type="hidden" id="c60Used">
                 
